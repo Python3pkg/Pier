@@ -1,0 +1,3 @@
+betterpath>=0.2.2
+characteristic
+docker-py>=1.0.0
