@@ -1,4 +1,4 @@
-from __future__ import absolute_import
+
 from contextlib import contextmanager
 from distutils.util import strtobool
 from uuid import uuid4
@@ -87,7 +87,7 @@ def _parse_API_event(event_json):
         message = error.pop("message")
         assert not error, error
         raise ImageBuildFailure(message)
-    elif event.keys() != ["stream"]:
+    elif list(event.keys()) != ["stream"]:
         raise ImageBuildFailure(event)
     else:
         return event["stream"]
